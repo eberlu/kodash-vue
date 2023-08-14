@@ -1,11 +1,18 @@
 <script setup lang="ts">
 
-let ola = 'oi'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const layout = computed(() => useRoute().meta.layout || 'DefaultLayout')
 
 </script>
 
 <template>
 
-	<RouterView />
+	<component :is="layout">
+
+		<RouterView />
+
+	</component>
 
 </template>

@@ -4,8 +4,6 @@
 
 <template>
 	
-	<div>
-		homepage
-	</div>
+	dashboard
 
 </template>
