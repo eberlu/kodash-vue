@@ -19,7 +19,7 @@ function onSidebarClose() {
 	sidebarIsOpen.value = false
 }
 
-const toggleDark = useToggle(isDark)
+const onToggleDark = useToggle(isDark)
 
 </script>
 
@@ -31,7 +31,7 @@ const toggleDark = useToggle(isDark)
 			open
 		</button>
 
-		<button @click="toggleDark()">
+		<button @click="onToggleDark()">
 			toggle dark
 		</button>
 
