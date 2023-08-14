@@ -53,6 +53,11 @@ module.exports = {
             'singleline': 'always', 
             'multiline': 'always', 
             'maxEmptyLines': 1 
-        }]
+        }],
+
+		"vue/html-closing-bracket-newline": ["error", {
+			"singleline": "never",
+			"multiline": "never"
+		}]
     }
 }
