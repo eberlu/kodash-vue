@@ -27,7 +27,10 @@ const onToggleDark = useToggle(isDark)
 
 	<header class="fixed top-0 left-0 flex items-center justify-between w-full h-[4rem] z-[999] px-3 xl:px-6 xl:w-[calc(100%-10rem)] xl:translate-x-[10rem] shadow bg-white dark:bg-gray-800">
 
-		<button @click="onSidebarOpen" class="xl:hidden">
+		<button
+			class="xl:hidden"
+			@click="onSidebarOpen">
+
 			open
 		</button>
 
@@ -37,10 +40,14 @@ const onToggleDark = useToggle(isDark)
 
 	</header>
 
-	<aside class="fixed top-0 left-0 w-[7rem] p-3 h-full z-[1000] xl:w-[10rem] xl:translate-x-0 transition-transform bg-primary-700"
+	<aside 
+		class="fixed top-0 left-0 w-[7rem] p-3 h-full z-[1000] xl:w-[10rem] xl:translate-x-0 transition-transform bg-primary-700"
 		:class="{ '-translate-x-40': !sidebarIsOpen }">
 
-		<button @click="onSidebarClose" class="xl:hidden">
+		<button 
+			class="xl:hidden" 
+			@click="onSidebarClose">
+
 			close
 		</button>
 
