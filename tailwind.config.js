@@ -3,9 +3,12 @@
 import colors from 'tailwindcss/colors'
 
 module.exports = {
-	purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+	content: [
+		// Example content paths...
+		'./public/**/*.html',
+		'./src/**/*.{js,jsx,ts,tsx,vue}',
+	],	
 	darkMode: 'class',
-	content: [],
 	theme: {
 		fontFamily: {
 			sans: ['Poppins', 'sans-serif'],
