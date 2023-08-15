@@ -1,0 +1,14 @@
+{
+	"navigation": [
+		{
+			"name": "Dashboard",
+			"to": "home",
+			"icon": "home"
+		},
+		{
+			"name": "Forms",
+			"to": "home",
+			"icon": "edit"
+		}
+	]
+}
