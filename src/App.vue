@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
-import { computed } from 'vue'
+import { computed, type ComputedRef } from 'vue'
 import { useRoute } from 'vue-router'
 
-const layout = computed(() => useRoute().meta.layout || 'DefaultLayout')
+const layout:ComputedRef<string> = computed(() => useRoute().meta.layout as string || 'DefaultLayout')
 
 </script>
 
