@@ -7,8 +7,18 @@
 		},
 		{
 			"name": "Forms",
-			"to": "home",
+			"to": "forms",
 			"icon": "edit"
+		},
+		{
+			"name": "Components",
+			"icon": "archive",
+			"children": [
+				{
+					"name": "Box",
+					"to": "components.box"
+				}
+			]
 		}
 	]
 }
