@@ -15,28 +15,35 @@ const props = withDefaults(defineProps<Props>(), {
 const getBorderClass:ComputedRef<string> = computed(() => 
 	!props.footerNoBorder ? 'border-t border-gray-200 dark:border-gray-900' : '')
 
+const getPaddingClass:ComputedRef<string> = computed(() => 'p-3 lg:p-5')
+
 </script>
 
 <template>
 
-	<div class="rounded shadow-md w-full p-3 lg:p-5 bg-white dark:bg-dark">
+	<div class="rounded shadow-md w-full bg-white dark:bg-dark">
 
 		<div 
 			v-if="$slots.header" 
-			class="pb-5 flex items-center justify-between">
+			class="flex items-center justify-between"
+			:class="[ getPaddingClass ]">
 
 			<slot name="header" />
 
 		</div>
 
-		<slot />
+		<div :class="[ getPaddingClass ]">
+			<slot />
+		</div>
 
 		<div 
 			v-if="$slots.footer" 
-			class="mt-5 pt-5 flex items-center justify-between"
+			class="mt-5 flex items-center justify-between"
 			:class="[ getBorderClass ]">
 
-			<slot name="footer" />
+			<div :class="[ getPaddingClass ]">
+				<slot name="footer" />
+			</div>
 
 		</div>
 
