@@ -26,6 +26,7 @@ function onSidebarOpen():void {
 
 function onSidebarClose():void {
 	sidebarIsOpen.value = false
+	currentSubmenu.value = null
 }
 
 const onToggleDark:Function = useToggle(isDark)
