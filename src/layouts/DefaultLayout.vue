@@ -6,6 +6,7 @@ import AppBrand from '@/components/AppBrand.vue'
 import layout from '@/data/layout.json'
 import { type NavigationItem } from '@/types'
 import NavItem from './default/NavItem.vue'
+import NavSubmenu from './default/NavSubmenu.vue'
 
 // state
 
@@ -14,6 +15,8 @@ const sidebarIsOpen:Ref<boolean> = ref(false)
 const isDark = useDark()
 
 const navigation:NavigationItem[] = layout.navigation
+
+const currentSubmenu:Ref<string | null> = ref(null)
 
 // events
 
@@ -26,6 +29,12 @@ function onSidebarClose():void {
 }
 
 const onToggleDark:Function = useToggle(isDark)
+
+function onToggleSubmenu(name:string):void {
+	currentSubmenu.value = currentSubmenu.value === name 
+		? null 
+		: name
+}
 
 </script>
 
@@ -67,7 +76,24 @@ const onToggleDark:Function = useToggle(isDark)
 				v-for="item in navigation" 
 				:name="item.name"
 				:to="item.to"
-				:icon="item.icon" />
+				:icon="item.icon" 
+				:children="item?.children"
+				@toggle-submenu="onToggleSubmenu" />
+
+			<teleport to="body">
+
+				<div 
+					v-for="item in navigation" 
+					:key="item.name">
+					
+					<NavSubmenu
+						v-if="item.children"
+						:current="currentSubmenu"	
+						:name="item.name" />
+
+				</div>
+
+			</teleport>
 
 		</nav>
 

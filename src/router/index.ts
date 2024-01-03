@@ -15,6 +15,7 @@ const router = createRouter({
 		},
 		{
 			path: '/components',
+			name: 'components',
 			children: [
 				{
 					path: 'box',

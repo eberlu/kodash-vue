@@ -6,19 +6,31 @@ import { useRoute } from 'vue-router'
 
 const props = defineProps<NavigationItem>()
 
+const emit = defineEmits([
+	'toggle-submenu'
+])
+
 // getters
 
 const getNameFontWeight:ComputedRef<string> = computed(() => {
 	return useRoute().name === props.to ? 'font-semibold' : 'font-regular'
 })
 
+// methods
+
+function handleClick(event: Event) {
+	event.preventDefault()
+	emit('toggle-submenu', !props.children ? null : props.name)
+}	
+
 </script>
 
 <template>
-
+	
 	<RouterLink
 		class="flex items-center flex-col gap-2 p-3"
-		:to="{ name: to }">
+		:to="{ name: to }"
+		@click="handleClick">
 
 		<FtIcon 
 			:type="icon" 
