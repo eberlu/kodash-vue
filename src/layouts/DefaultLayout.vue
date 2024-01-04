@@ -90,7 +90,9 @@ function onToggleSubmenu(name:string):void {
 					<NavSubmenu
 						v-if="item.children"
 						:current="currentSubmenu"	
-						:name="item.name" />
+						:name="item.name" 
+						:links="item.children"
+						@toggle-submenu="onToggleSubmenu"/>
 
 				</div>
 
