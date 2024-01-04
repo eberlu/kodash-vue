@@ -17,6 +17,10 @@
 				{
 					"name": "Box",
 					"to": "components.box"
+				},
+				{
+					"name": "Buttons",
+					"to": "components.buttons"
 				}
 			]
 		}

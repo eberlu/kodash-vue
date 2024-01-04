@@ -22,6 +22,11 @@ const router = createRouter({
 					name: 'components.box',
 					component: () => import('../views/ComponentBox.vue')
 				},
+				{
+					path: 'buttons',
+					name: 'components.buttons',
+					component: () => import('../views/ComponentButtons.vue')
+				},
 			]
 		},
 	]
